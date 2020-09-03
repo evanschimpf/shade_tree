@@ -15,14 +15,14 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->integer('thumbnail_id')->unsigned()->default(0);
-            //$table->foreign('thumbnail_id')
-            //    ->references('id')->on('image_thumbnails')
-            //    ->onDelete('cascade');
-            $table->string('filename')->nullable(false)->default("");
-            $table->string('filepath')->nullable(false)->default("");
-            $table->string('title')->nullable(true);
-            $table->string('description')->nullable(true);
+            $table->foreignId('thumbnail_id')
+                ->references('id')
+                ->on('image_thumbnails')
+                ->onDelete('cascade');
+            $table->string('filename');
+            $table->string('filepath');
+            $table->string('title')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

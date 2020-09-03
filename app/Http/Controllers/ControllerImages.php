@@ -15,7 +15,7 @@ use App\Image;
 class ControllerImages extends Controller
 {
 
-    public function CreateImage(Request $request) {
+    public function createImage(Request $request) {
         $validator = Validator::make($request->all(),
         [
             'image' => 'required|mimes:jpg,jpeg,png,gif'
@@ -39,7 +39,7 @@ class ControllerImages extends Controller
 
         // Generate thumbnail and save it to the filesystem
         InterventionImage::make($request->file('image'))
-            ->resize(200, 200)->save($thumbnail_folder_path . $thumbnail_name);
+            ->fit(200, 200)->save($thumbnail_folder_path . $thumbnail_name);
 
         // Save the thumbnail to the database
         $thumbnail = new ImageThumbnail();
@@ -51,7 +51,7 @@ class ControllerImages extends Controller
         $image = new Image();
         $image->thumbnail_id    = $thumbnail->id;
         $image->filename        = $image_name;
-        $image->filepath        = $image;
+        $image->filepath        = $image_folder_path . $image_name;
         $image->title           = $request->title;
         $image->description     = $request->description;
         $image->save();
@@ -63,5 +63,49 @@ class ControllerImages extends Controller
             "image" => $image_name,
             "thumbnail" => $thumbnail_name
         ]);
+    }
+
+    public function getImage($id) {
+        if(Image::where('id', $id)->exists()) {
+            $image = Image::where('id', $id)->get()[0];
+            return response()->download($image->filepath);
+        } else {
+            return response()->json([
+                "message" => "Image not found"
+            ], 404);
+        }
+    }
+
+    public function getImageDetails($id) {
+        if(Image::where('id', $id)->exists()) {
+            $image = Image::where('id', $id)->get()[0];
+            return response($image, 200);
+        } else {
+            return response()->json([
+                "message" => "Image not found"
+            ], 404);
+        }
+    }
+
+    public function getImageThumbnail($id) {
+        if(ImageThumbnail::where('id', $id)->exists()) {
+            $image_thumbnail = ImageThumbnail::where('id', $id)->get()[0];
+            return response()->download($image_thumbnail->filepath);
+        } else {
+            return response()->json([
+                "message" => "Image not found"
+            ], 404);
+        }
+    }
+
+    public function getImageThumbnailDetails($id) {
+        if(ImageThumbnail::where('id', $id)->exists()) {
+            $image_thumbnail = ImageThumbnail::where('id', $id)->get()[0];
+            return response($image_thumbnail, 200);
+        } else {
+            return response()->json([
+                "message" => "Image thumbnail not found"
+            ], 404);
+        }
     }
 }

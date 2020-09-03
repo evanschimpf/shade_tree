@@ -9,6 +9,7 @@ class Car extends Model
     protected $table = 'cars';
 
     protected $fillable = [
+        'description',
         'year',
         'make',
         'model',
@@ -16,13 +17,5 @@ class Car extends Model
         'engine',
         'mileage'
     ];
-
-    public $description;
-    public $year;
-    public $make;
-    public $model;
-    public $sub_model;
-    public $engine;
-    public $mileage;
 }
 

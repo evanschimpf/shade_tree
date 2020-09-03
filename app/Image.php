@@ -15,10 +15,4 @@ class Image extends Model
         'title',
         'description'
     ];
-
-    //public $thumbnail_id;
-    public $filename;
-    public $filepath;
-    public $title;
-    public $description;
 }

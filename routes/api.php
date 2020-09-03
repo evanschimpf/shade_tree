@@ -27,9 +27,14 @@ Route::delete('cars/{id}', 'ControllerCars@deleteCar');
 
 /********** Images **********/
 Route::get('images/{id}', 'ControllerImages@getImage');
+Route::get('images/{id}/details', 'ControllerImages@getImageDetails');
 Route::post('images', 'ControllerImages@createImage');
 Route::put('images/{id}', 'ControllerImages@updateImage');
 Route::delete('images/{id}', 'ControllerImages@deleteImage');
+
+/********** Images Thumbnails **********/
+Route::get('image_thumbnails/{id}', 'ControllerImages@getImageThumbnail');
+Route::get('image_thumbnails/{id}/details', 'ControllerImages@getImageThumbnailDetails');
 
 
 
