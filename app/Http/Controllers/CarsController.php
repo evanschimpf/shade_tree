@@ -13,12 +13,16 @@ class CarsController extends Controller
             Auth::check();
             $car = Car::where('id', $id)->get()[0];
             if($car->user_id != Auth::id()) {
-                return view('car', ['name' => 'Unauthorized user!']);
+                return response()->json([
+                    "message" => "Car not found"
+                ], 404);
             }
 
-            return view('car', ['name' => $car]);
+            return view('car', ['car' => $car]);
         } else {
-            return view('car', ['name' => 'Car not found!']);
+            return response()->json([
+                "message" => "Car not found"
+            ], 404);
         }
     }
 }
