@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Job;
 
-class ControllerJobs extends Controller
+class ApiControllerJobs extends Controller
 {
 
-    public function getAllCars() {
-        $cars = Job::get()->toJson(JSON_PRETTY_PRINT);
-        return response($cars, 200);
+    public function getAllJobs() {
+        $jobs = Job::get()->toJson(JSON_PRETTY_PRINT);
+        return response($jobs, 200);
     }
 
     public function createJob(Request $request) {

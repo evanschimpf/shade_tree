@@ -12,7 +12,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Facades\Image as InterventionImage;
 use App\Image;
 
-class ControllerImages extends Controller
+class ApiControllerImages extends Controller
 {
 
     public function createImage(Request $request) {

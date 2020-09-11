@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Car;
 
-class ControllerCars extends Controller
+class ApiControllerCars extends Controller
 {
 
     public function getAllCars() {

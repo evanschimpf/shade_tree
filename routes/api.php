@@ -19,22 +19,22 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 /********** Cars **********/
-Route::get('cars', 'ControllerCars@getAllCars');
-Route::get('cars/{id}', 'ControllerCars@getCar');
-Route::post('cars', 'ControllerCars@createCar');
-Route::put('cars/{id}', 'ControllerCars@updateCar');
-Route::delete('cars/{id}', 'ControllerCars@deleteCar');
+Route::get('cars', 'ApiControllerCars@getAllCars');
+Route::get('cars/{id}', 'ApiControllerCars@getCar');
+Route::post('cars', 'ApiControllerCars@createCar');
+Route::put('cars/{id}', 'ApiControllerCars@updateCar');
+Route::delete('cars/{id}', 'ApiControllerCars@deleteCar');
 
 /********** Images **********/
-Route::get('images/{id}', 'ControllerImages@getImage');
-Route::get('images/{id}/details', 'ControllerImages@getImageDetails');
-Route::post('images', 'ControllerImages@createImage');
-Route::put('images/{id}', 'ControllerImages@updateImage');
-Route::delete('images/{id}', 'ControllerImages@deleteImage');
+Route::get('images/{id}', 'ApiControllerImages@getImage');
+Route::get('images/{id}/details', 'ApiControllerImages@getImageDetails');
+Route::post('images', 'ApiControllerImages@createImage');
+Route::put('images/{id}', 'ApiControllerImages@updateImage');
+Route::delete('images/{id}', 'ApiControllerImages@deleteImage');
 
 /********** Images Thumbnails **********/
-Route::get('image_thumbnails/{id}', 'ControllerImages@getImageThumbnail');
-Route::get('image_thumbnails/{id}/details', 'ControllerImages@getImageThumbnailDetails');
+Route::get('image_thumbnails/{id}', 'ApiControllerImages@getImageThumbnail');
+Route::get('image_thumbnails/{id}/details', 'ApiControllerImages@getImageThumbnailDetails');
 
 
 
