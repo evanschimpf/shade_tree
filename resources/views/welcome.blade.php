@@ -52,7 +52,7 @@
                     ShadeTree
                 </div>
 
-                <img src="images/icon.png" style="width:150px;height:150px;">
+                <img src="images/icon.svg" style="width:150px;height:150px;">
             </div>
 
         </div>

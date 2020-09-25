@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Car;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -86,5 +85,51 @@ class ImageApiController extends Controller
             "image" => $image_name,
             "thumbnail" => $thumbnail_name
         ]);
+    }
+
+    public function getThumbnail(Request $request, $id) {
+        if(Image::where('id', $id)->where('user_id', $request->user()->id)->exists()) {
+            $image = Image::find($id);
+            if(Thumbnail::where('id', $image->thumbnail_id)->exists()) {
+                $thumbnail = Thumbnail::find($image->thumbnail_id);
+                return response()->download($thumbnail->filepath);
+            } else {
+                /*
+                    If image is found but the thumbnail isn't, we could potentially recreate the thumbnail.
+                    This shouldn't ever happen though...
+                */
+                return response()->json([
+                    "message" => "Thumbnail for image not found"
+                ], 404);
+            }
+
+        } else {
+            return response()->json([
+                "message" => "Image not found, cannot get thumbnail"
+            ], 404);
+        }
+    }
+
+    public function getThumbnailDetails(Request $request, $id) {
+        if(Image::where('id', $id)->where('user_id', $request->user()->id)->exists()) {
+            $image = Image::find($id);
+            if(Thumbnail::where('id', $image->thumbnail_id)->exists()) {
+                $thumbnail = Thumbnail::find($image->thumbnail_id);
+                return response($thumbnail, 200);
+            } else {
+                /*
+                    If image is found but the thumbnail isn't, we could potentially recreate the thumbnail.
+                    This shouldn't ever happen though...
+                */
+                return response()->json([
+                    "message" => "Thumbnail for image not found"
+                ], 404);
+            }
+
+        } else {
+            return response()->json([
+                "message" => "Image not found, cannot get thumbnail"
+            ], 404);
+        }
     }
 }

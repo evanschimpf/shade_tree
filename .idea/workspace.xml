@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="08d02a01-2953-4cd5-b121-a5cb38f13e76" name="Default Changelist" comment="" />
+    <list default="true" id="08d02a01-2953-4cd5-b121-a5cb38f13e76" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/application-mark.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImageApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImageApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThumbnailApiController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/errors/404.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/errors/404.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/error.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/error.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +40,9 @@
     <execution>
       <executable path="composer" />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -137,6 +168,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1hUam1du18cavrLOsWqxQFvYpow" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -144,19 +178,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/layouts" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/app/View/Components" />
       <recent name="$PROJECT_DIR$/resources/views/layouts" />
       <recent name="$PROJECT_DIR$/resources/views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/layouts" />
     </key>
   </component>
   <component name="RunManager">
@@ -174,12 +208,24 @@
       <option name="presentableId" value="Default" />
       <updated>1600068280057</updated>
       <workItem from="1600068281083" duration="19449000" />
-      <workItem from="1600570766528" duration="5880000" />
+      <workItem from="1600570766528" duration="8468000" />
+      <workItem from="1601053758346" duration="3620000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="720" y="468" width="523" height="178" key="ComposerInitDialogKey" timestamp="1600981885256">
@@ -206,13 +252,13 @@
       <screen x="54" y="27" width="1866" height="1053" />
     </state>
     <state x="673" y="273" width="617" height="575" key="NewPhpClassDialog/54.27.1866.1053/1920.0.1920.1080@54.27.1866.1053" timestamp="1600378940224" />
-    <state x="782" y="479" width="399" height="156" key="NewPhpFileDialog" timestamp="1600378946638">
+    <state x="782" y="479" width="399" height="156" key="NewPhpFileDialog" timestamp="1601057043646">
       <screen x="54" y="27" width="1866" height="1053" />
     </state>
-    <state x="782" y="479" width="399" height="156" key="NewPhpFileDialog/54.27.1866.1053/1920.0.1920.1080@54.27.1866.1053" timestamp="1600378946638" />
-    <state x="1165" y="297" width="618" height="783" key="find.popup" timestamp="1600553986369">
+    <state x="782" y="479" width="399" height="156" key="NewPhpFileDialog/54.27.1866.1053/1920.0.1920.1080@54.27.1866.1053" timestamp="1601057043646" />
+    <state x="1048" y="201" width="618" height="783" key="find.popup" timestamp="1601057504665">
       <screen x="54" y="27" width="1866" height="1053" />
     </state>
-    <state x="1165" y="297" width="618" height="783" key="find.popup/54.27.1866.1053/1920.0.1920.1080@54.27.1866.1053" timestamp="1600553986369" />
+    <state x="1048" y="201" width="618" height="783" key="find.popup/54.27.1866.1053/1920.0.1920.1080@54.27.1866.1053" timestamp="1601057504665" />
   </component>
 </project>

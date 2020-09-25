@@ -19,19 +19,31 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 /********** Cars **********/
-Route::middleware('auth:sanctum')->get('/cars', 'App\Http\Controllers\CarApiController@getAllCars');
-Route::middleware('auth:sanctum')->get('/cars/{id}', 'App\Http\Controllers\CarApiController@getCar');
-Route::middleware('auth:sanctum')->post('cars', 'App\Http\Controllers\CarApiController@createCar');
-Route::middleware('auth:sanctum')->put('cars/{id}', 'App\Http\Controllers\CarApiController@updateCar');
-Route::middleware('auth:sanctum')->delete('cars/{id}', 'App\Http\Controllers\CarApiController@deleteCar');
+Route::middleware('auth:sanctum')
+    ->get('/cars', 'App\Http\Controllers\CarApiController@getAllCars');
+Route::middleware('auth:sanctum')
+    ->get('/cars/{id}', 'App\Http\Controllers\CarApiController@getCar');
+Route::middleware('auth:sanctum')
+    ->post('cars', 'App\Http\Controllers\CarApiController@createCar');
+Route::middleware('auth:sanctum')
+    ->put('cars/{id}', 'App\Http\Controllers\CarApiController@updateCar');
+Route::middleware('auth:sanctum')
+    ->delete('cars/{id}', 'App\Http\Controllers\CarApiController@deleteCar');
 
 /********** Images **********/
-Route::middleware('auth:sanctum')->get('images/{id}', 'App\Http\Controllers\ImageApiController@getImage');
-Route::middleware('auth:sanctum')->get('images/{id}/details', 'App\Http\Controllers\ImageApiController@getImageDetails');
-Route::middleware('auth:sanctum')->post('images', 'App\Http\Controllers\ImageApiController@createImage');
-Route::middleware('auth:sanctum')->put('images/{id}', 'App\Http\Controllers\ImageApiController@updateImage');
-Route::middleware('auth:sanctum')->delete('images/{id}', 'App\Http\Controllers\ImageApiController@deleteImage');
+Route::middleware('auth:sanctum')
+    ->get('images/{id}', 'App\Http\Controllers\ImageApiController@getImage');
+Route::middleware('auth:sanctum')
+    ->get('images/{id}/details', 'App\Http\Controllers\ImageApiController@getImageDetails');
+Route::middleware('auth:sanctum')
+    ->post('images', 'App\Http\Controllers\ImageApiController@createImage');
+Route::middleware('auth:sanctum')
+    ->put('images/{id}', 'App\Http\Controllers\ImageApiController@updateImage');
+Route::middleware('auth:sanctum')
+    ->delete('images/{id}', 'App\Http\Controllers\ImageApiController@deleteImage');
 
 /********** Thumbnails **********/
-Route::middleware('auth:sanctum')->get('thumbnails/{id}', 'App\Http\Controllers\ThumbnailApiController@getThumbnail');
-Route::middleware('auth:sanctum')->get('thumbnails/{id}/details', 'App\Http\Controllers\ThumbnailApiController@getThumbnailDetails');
+Route::middleware('auth:sanctum')
+    ->get('images/{id}/thumbnail', 'App\Http\Controllers\ImageApiController@getThumbnail');
+Route::middleware('auth:sanctum')
+    ->get('images/{id}/thumbnail/details', 'App\Http\Controllers\ImageApiController@getThumbnailDetails');
