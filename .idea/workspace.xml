@@ -20,15 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08d02a01-2953-4cd5-b121-a5cb38f13e76" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/application-mark.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImageApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImageApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThumbnailApiController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/errors/404.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/errors/404.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/error.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/error.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/application-mark.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/application-mark.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,6 +184,7 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/layouts" />
+      <recent name="$PROJECT_DIR$/resources/views" />
     </key>
   </component>
   <component name="RunManager">
@@ -209,7 +203,7 @@
       <updated>1600068280057</updated>
       <workItem from="1600068281083" duration="19449000" />
       <workItem from="1600570766528" duration="8468000" />
-      <workItem from="1601053758346" duration="3620000" />
+      <workItem from="1601053758346" duration="7126000" />
     </task>
     <servers />
   </component>
