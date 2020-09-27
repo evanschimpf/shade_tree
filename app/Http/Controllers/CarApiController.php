@@ -76,4 +76,16 @@ class CarApiController extends Controller
             ], 404);
         }
     }
+
+    public function getCarImages(Request $request, $id) {
+        if(Car::where('id', $id)->where('user_id', $request->user()->id)->exists()) {
+            $car = Car::find($id);
+            $images = $car->images;
+            return response($images->toJson(JSON_PRETTY_PRINT), 200);
+        } else {
+            return response()->json([
+            "message" => "Car not found"
+            ], 404);
+        }
+    }
 }

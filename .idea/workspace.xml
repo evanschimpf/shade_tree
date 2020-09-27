@@ -21,7 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="08d02a01-2953-4cd5-b121-a5cb38f13e76" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/application-mark.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/application-mark.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CarApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CarApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImageApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImageApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Car.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Car.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Image.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Thumbnail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Thumbnail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_14_073231_create_thumbnails_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_14_073231_create_thumbnails_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_14_073239_create_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_14_073230_create_images_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +210,7 @@
       <updated>1600068280057</updated>
       <workItem from="1600068281083" duration="19449000" />
       <workItem from="1600570766528" duration="8468000" />
-      <workItem from="1601053758346" duration="7126000" />
+      <workItem from="1601053758346" duration="14709000" />
     </task>
     <servers />
   </component>

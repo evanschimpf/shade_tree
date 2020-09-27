@@ -12,7 +12,12 @@ class Thumbnail extends Model
     protected $table = 'thumbnails';
 
     protected $fillable = [
+        'image_id',
         'filename',
         'filepath',
     ];
+
+    public function image() {
+        return $this->belongsTo(Image::class);
+    }
 }

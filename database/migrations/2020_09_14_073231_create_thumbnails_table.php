@@ -15,6 +15,7 @@ class CreateThumbnailsTable extends Migration
     {
         Schema::create('thumbnails', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('image_id')->references('id')->on('images');
             $table->string('filepath');
             $table->string('filename');
             $table->timestamps();

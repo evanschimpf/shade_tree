@@ -19,4 +19,12 @@ class Image extends Model
         'title',
         'description'
     ];
+
+    public function imageable() {
+        return $this->morphTo();
+    }
+
+    public function thumbnail() {
+        return $this->hasOne(Thumbnail::class);
+    }
 }

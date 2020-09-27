@@ -58,51 +58,44 @@ class ImageApiController extends Controller
         $image_name_and_extension = explode(".", $image_name);
         $thumbnail_name = $image_name_and_extension[0] . '_t.'. $image_name_and_extension[1];
 
-        // Generate thumbnail and save it to the filesystem
-        InterventionImage::make($request->file('image'))
-            ->fit(200, 200)->save($thumbnail_folder_path . $thumbnail_name);
-
-        // Save the thumbnail to the database
-        $thumbnail = new Thumbnail();
-        $thumbnail->filename = $thumbnail_name;
-        $thumbnail->filepath = $thumbnail_folder_path . $thumbnail_name;
-        $thumbnail->save();
-
         // Save the image to the database
         $image = new Image();
         $image->user_id         = $request->user()->id;
-        $image->thumbnail_id    = $thumbnail->id;
+        $image->imageable_id    = isset($request->imageable_id) ? $request->imageable_id : -1;
+        $image->imageable_type  = isset($request->imageable_type) ? $request->imageable_type : "";
         $image->filename        = $image_name;
         $image->filepath        = $image_folder_path . $image_name;
         $image->title           = $request->title;
         $image->description     = $request->description;
         $image->save();
 
+        // Generate thumbnail and save it to the filesystem
+        InterventionImage::make($request->file('image'))
+            ->fit(200, 200)->save($thumbnail_folder_path . $thumbnail_name);
+
+        // Save the thumbnail to the database
+        $thumbnail = new Thumbnail();
+        $thumbnail->image_id = $image->id;
+        $thumbnail->filename = $thumbnail_name;
+        $thumbnail->filepath = $thumbnail_folder_path . $thumbnail_name;
+        $thumbnail->save();
+
         // Return success
         return response()->json([
             "success" => true,
             "message" => "File successfully uploaded",
             "image" => $image_name,
-            "thumbnail" => $thumbnail_name
+            "thumbnail" => $thumbnail_name,
+            "imageable_id" => $image->imageable_id,
+            "imageable_type" => $image->imageable_type
         ]);
     }
 
     public function getThumbnail(Request $request, $id) {
         if(Image::where('id', $id)->where('user_id', $request->user()->id)->exists()) {
             $image = Image::find($id);
-            if(Thumbnail::where('id', $image->thumbnail_id)->exists()) {
-                $thumbnail = Thumbnail::find($image->thumbnail_id);
-                return response()->download($thumbnail->filepath);
-            } else {
-                /*
-                    If image is found but the thumbnail isn't, we could potentially recreate the thumbnail.
-                    This shouldn't ever happen though...
-                */
-                return response()->json([
-                    "message" => "Thumbnail for image not found"
-                ], 404);
-            }
-
+            $thumbnail = $image->thumbnail;
+            return response()->download($thumbnail->filepath);
         } else {
             return response()->json([
                 "message" => "Image not found, cannot get thumbnail"
@@ -113,19 +106,8 @@ class ImageApiController extends Controller
     public function getThumbnailDetails(Request $request, $id) {
         if(Image::where('id', $id)->where('user_id', $request->user()->id)->exists()) {
             $image = Image::find($id);
-            if(Thumbnail::where('id', $image->thumbnail_id)->exists()) {
-                $thumbnail = Thumbnail::find($image->thumbnail_id);
-                return response($thumbnail, 200);
-            } else {
-                /*
-                    If image is found but the thumbnail isn't, we could potentially recreate the thumbnail.
-                    This shouldn't ever happen though...
-                */
-                return response()->json([
-                    "message" => "Thumbnail for image not found"
-                ], 404);
-            }
-
+            $thumbnail = $image->thumbnail;
+            return response($thumbnail, 200);
         } else {
             return response()->json([
                 "message" => "Image not found, cannot get thumbnail"
